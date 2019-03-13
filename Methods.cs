@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
 /// <summary>
-/// Name providing Methods class
+/// Namespace providing Methods class
 /// </summary>
 namespace SeleniumMethods
 {
@@ -66,10 +66,10 @@ namespace SeleniumMethods
             }
             catch (Exception e)
             {
-                if (e.Message.Contains("input area") && attempt < 10)
+                if (e.Message.Contains("input area") && attempt < 5)
                 {
                     KeysToEl(Driver, Element, OpenQA.Selenium.Keys.ArrowDown);
-                    ClickEl(Driver, Element, attempt);
+                    ClickEl(Driver, Element, ++attempt);
                 }
             }
         }
